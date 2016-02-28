@@ -9,12 +9,12 @@ before_install:
 - sudo mkswap /swapfile
 - sudo swapon /swapfile
 - sudo swapon -s
-- git config user.name "Travis-CI"
-- git config user.email "travis@travis-ci.org"
 - mkdir ~/bin
 - PATH=~/bin:$PATH
 - curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 - chmod a+x ~/bin/repo
+- git config user.name "Travis-CI"
+- git config user.email "travis@travis-ci.org"
 - repo init -u git://github.com/CyanogenMod/android.git -b cm-11.0 -g all,-notdefault,-darwin
 - curl --create-dirs -L -o .repo/local_manifests/local_manifest.xml -O -L https://raw.github.com/TeamVee/android_.repo_local_manifests/cm-11.0/local_manifest.xml
 - repo sync -j50
