@@ -6,17 +6,17 @@ before_install:
 - sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential lzop zip curl libncurses5-dev zlib1g-dev pngcrush schedtool libxml2 libxml2-utils xsltproc g++-multilib lib32z1-dev lib32ncurses5-dev lib32readline-gplv2-dev gcc-multilib
 - sudo swapon -s &> /dev/null
 - df -h
-- sudo dd if=/dev/zero of=/swapfile bs=1024 count=2048k &> /dev/null
-- sudo mkswap /swapfile &> /dev/null
-- sudo swapon /swapfile &> /dev/null
+- sudo dd if=/dev/zero of=/swapfile bs=1024 count=2048k
+- sudo mkswap /swapfile
+- sudo swapon /swapfile
 - sudo swapon -s &> /dev/null
 - mkdir ~/bin &> /dev/null
 - PATH=~/bin:$PATH &> /dev/null
-- curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo &> /dev/null
-- chmod a+x ~/bin/repo &> /dev/null
+- curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+- chmod a+x ~/bin/repo
 - git config --global user.name "Travis-CI" &> /dev/null
 - git config --global user.email "travis@travis-ci.org" &> /dev/null
-- echo "y" | repo init -u git://github.com/CyanogenMod/android.git -b cm-11.0 -g all,-notdefault,-darwin &> /dev/null
+- echo "y" | repo init -u git://github.com/CyanogenMod/android.git -b cm-11.0 -g all,-notdefault,-darwin
 - curl --create-dirs -L -o .repo/local_manifests/local_manifest.xml -O -L https://raw.github.com/TeamVee/android_.repo_local_manifests/cm-11.0/local_manifest.xml
 - repo sync -j300 > /tmp/log.txt
 - df -h
