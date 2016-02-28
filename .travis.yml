@@ -3,21 +3,21 @@ language: c
 env:
 - ARCH=arm SUBARCH=arm CROSS_COMPILE=arm-eabi-
 before_install:
-- sudo swapon -s
+- sudo swapon -s &> /dev/null
 - df -h
-- sudo dd if=/dev/zero of=/swapfile bs=1024 count=2048k
-- sudo mkswap /swapfile
-- sudo swapon /swapfile
-- sudo swapon -s
-- mkdir ~/bin
-- PATH=~/bin:$PATH
-- curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-- chmod a+x ~/bin/repo
-- git config --global user.name "Travis-CI"
-- git config --global user.email "travis@travis-ci.org"
-- echo "y" | repo init -u git://github.com/CyanogenMod/android.git -b cm-11.0 -g all,-notdefault,-darwin
-- curl --create-dirs -L -o .repo/local_manifests/local_manifest.xml -O -L https://raw.github.com/TeamVee/android_.repo_local_manifests/cm-11.0/local_manifest.xml
-- repo sync -j50
+- sudo dd if=/dev/zero of=/swapfile bs=1024 count=2048k &> /dev/null
+- sudo mkswap /swapfile &> /dev/null
+- sudo swapon /swapfile &> /dev/null
+- sudo swapon -s &> /dev/null
+- mkdir ~/bin &> /dev/null
+- PATH=~/bin:$PATH &> /dev/null
+- curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo &> /dev/null
+- chmod a+x ~/bin/repo &> /dev/null
+- git config --global user.name "Travis-CI" &> /dev/null
+- git config --global user.email "travis@travis-ci.org" &> /dev/null
+- echo "y" | repo init -u git://github.com/CyanogenMod/android.git -b cm-11.0 -g all,-notdefault,-darwin &> /dev/null
+- curl --create-dirs -L -o .repo/local_manifests/local_manifest.xml -O -L https://raw.github.com/TeamVee/android_.repo_local_manifests/cm-11.0/local_manifest.xml &> /dev/null
+- repo sync -j50 &> /dev/null
 script:
 - echo "If all go good"
 - echo "Lets go!"
