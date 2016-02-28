@@ -18,7 +18,7 @@ before_install:
 - git config --global user.email "travis@travis-ci.org" &> /dev/null
 - echo "y" | repo init -u git://github.com/CyanogenMod/android.git -b cm-11.0 -g all,-notdefault,-darwin
 - curl --create-dirs -L -o .repo/local_manifests/local_manifest.xml -O -L https://raw.github.com/TeamVee/android_.repo_local_manifests/cm-11.0/local_manifest.xml
-- repo sync -j300 | grep "Fetching projects:"
+- repo sync -q -j300
 - df -h
 - rm -rf .repo &> /dev/null
 - df -h
