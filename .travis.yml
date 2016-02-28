@@ -4,7 +4,7 @@ env:
 - ARCH=arm SUBARCH=arm CROSS_COMPILE=arm-eabi-
 before_install:
 - sudo swapon -s
-- df
+- df -h
 - sudo dd if=/dev/zero of=/swapfile bs=1024 count=2048k
 - sudo mkswap /swapfile
 - sudo swapon /swapfile
