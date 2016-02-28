@@ -9,6 +9,8 @@ before_install:
 - sudo mkswap /swapfile
 - sudo swapon /swapfile
 - sudo swapon -s
+- git config user.name "Travis-CI"
+- git config user.email "travis@travis-ci.org"
 - mkdir ~/bin
 - PATH=~/bin:$PATH
 - curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
