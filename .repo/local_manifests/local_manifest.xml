@@ -2,10 +2,11 @@
 <manifest>
 	<!-- Remote names -->
 	<remote name="tvss" fetch="https://github.com/TeamVee-SS/" />
+	<remote name="cm" fetch="https://github.com/CyanogenMod/" />
 	<!-- Project FalconSS -->
 	<project path="device/sony/falconss" name="android_device_sony_falconss" revision="cm-11.0" remote="tvss" />
 	<project path="kernel/sony/falconss" name="android_kernel_sony_falconss" revision="cm-11.0" remote="tvss" />
 	<project path="vendor/sony/falconss" name="android_vendor_sony_falconss" revision="cm-11.0" remote="tvss" />
 	<!-- QCOM Common -->
-	<project path="device/qcom/common" name="CyanogenMod/android_device_qcom_common" revision="cm-11.0" />
+	<project path="device/qcom/common" name="android_device_qcom_common" revision="cm-11.0" remote="cm" />
 </manifest>
