@@ -34,4 +34,4 @@ deploy:
     secure: WVO6azJdGkFF4Y3LFjYZdBOx/ENHkItAYAWiAIStNZQXOB7blU2dbbxZeDkAGrL6dgFW3SDNpGzBjHXyeuc5hoBb5Bu2lo90TmIa8riJzlfJROLrnyHzMz7HFjkUeqfPfNj2O/FSKNxwSvxpLA+Gw/D5OKoYAExKl51AK1TB4rd3VXaLO2VbK3P36fR/1hc3ldbZzGNZhfu+r/Elwfved+tNRoFg4tU51kz4lOsUgAe2gNEiUoLbudyfWkM+cwx+1bUW8ZkGb14usDona4BQ2o1ZiIzHfJX5rh+/oBZR/2FpCA1yr8nqR43e/CEbm8JNsiCtAuvT8rNmXJZMNK9Hgwo+s5dsoIUM86Uejpgyiw8EC6EJq9V9zmKP3HiKQmpc9gfceU61p3uk5suGx+G/ZktZ0PM5DhGrcL1blbiD8bKQthP46IzxKM7r1NrfqMbAcwXT3Y+4dJA8phZuH0fKvpOaypu/JyiUgeo96+sWGSioOD2b39TOCDy3rlzKUVZUDVJX83Q3bOkjGH/g4vaUAzq6NtH27916BTtazZEOID1WZkUm8gmlBmR1ES1+RF8RohlVlEJqg1NO6TOh5v7Htvfo4VP8jG+ewdiffmMUJKB3M/erGHNJimv/LmF9vj3Y2r/c84bKWSjhiOhwnCmlwKXAEiQVu4zy7GUFoI0W+P0=
   file: "${zipfile}"
   on:
-    repo: TeamVee-B/android-travis-ci
+    repo: TeamVee-B/twrp3-falconss-travis-ci
