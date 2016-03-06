@@ -4,11 +4,7 @@ env:
 - ARCH=arm SUBARCH=arm CROSS_COMPILE=arm-eabi-
 before_install:
 - sudo apt-get purge oracle-jdk7-installer oracle-java7-installer
-- sudo apt-get purge openjdk*
-- sudo add-apt-repository -y ppa:webupd8team/java
-- sudo apt-get update
-- sudo apt-get install oracle-java7-installer -y
-- sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential lzop zip curl libncurses5-dev zlib1g-dev pngcrush schedtool libxml2 libxml2-utils xsltproc g++-multilib lib32z1-dev lib32ncurses5-dev lib32readline-gplv2-dev gcc-multilib
+- sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential lzop zip curl libncurses5-dev zlib1g-dev pngcrush schedtool libxml2 libxml2-utils xsltproc g++-multilib lib32z1-dev lib32ncurses5-dev lib32readline-gplv2-dev gcc-multilib openjdk-7-jdk -y
 - sudo swapon -s &> /dev/null
 - df -h
 - sudo dd if=/dev/zero of=/swapfile bs=1024 count=2048k
@@ -25,8 +21,6 @@ before_install:
 - repo sync -q -j4
 - rm -rf .repo
 script:
-- echo "If all go good"
-- echo "Lets go!"
 - source build/envsetup.sh
 - breakfast falconss
 - make recoveryimage
