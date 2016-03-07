@@ -1,9 +1,7 @@
 sudo: required
 language: c
-env:
-- ARCH=arm SUBARCH=arm CROSS_COMPILE=arm-eabi-
 before_install:
-- sudo apt-get purge oracle-jdk7-installer oracle-java7-installer
+- sudo apt-get purge oracle* -y
 - sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential lzop zip curl libncurses5-dev zlib1g-dev pngcrush schedtool libxml2 libxml2-utils xsltproc g++-multilib lib32z1-dev lib32ncurses5-dev lib32readline-gplv2-dev gcc-multilib openjdk-7-jdk -y
 - sudo swapon -s &> /dev/null
 - df -h
