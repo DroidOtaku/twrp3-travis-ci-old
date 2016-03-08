@@ -16,7 +16,7 @@ before_install:
 - git config --global user.name "Travis-CI" &> /dev/null
 - git config --global user.email "travis@travis-ci.org" &> /dev/null
 - echo "y" | repo init -u git://github.com/lj50036/platform_manifest_twrp_omni.git -b twrp-6.0
-- repo sync -q -j4
+- repo sync -q -j1
 - rm -rf .repo
 script:
 - source build/envsetup.sh
