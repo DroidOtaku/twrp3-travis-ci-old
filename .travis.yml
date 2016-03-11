@@ -3,22 +3,20 @@ language: c
 before_install:
 - sudo apt-get purge oracle* openjdk-6* -y
 - sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential lzop zip curl libncurses5-dev zlib1g-dev pngcrush schedtool libxml2 libxml2-utils xsltproc g++-multilib lib32z1-dev lib32ncurses5-dev lib32readline-gplv2-dev gcc-multilib openjdk-7-jdk -y
-- sudo swapon -s &> /dev/null
 - sudo dd if=/dev/zero of=/swapfile bs=1024 count=2048k
 - sudo mkswap /swapfile
 - sudo swapon /swapfile
-- sudo swapon -s &> /dev/null
-- mkdir ~/bin &> /dev/null
-- PATH=~/bin:$PATH &> /dev/null
+- mkdir ~/bin
+- PATH=~/bin:$PATH
 - curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 - chmod a+x ~/bin/repo
 - git config --global user.name "Travis-CI" &> /dev/null
 - git config --global user.email "travis@travis-ci.org" &> /dev/null
 - echo "y" | repo init -u git://github.com/lj50036/platform_manifest_twrp_omni.git -b twrp-6.0
-- repo sync -q -j1
+- repo sync -q -j4
 - rm -rf .repo
-script:
 - source build/envsetup.sh
+script:
 - breakfast falconss
 - make recoveryimage
 - recoveryimgfile=`find . -name *.img | grep recovery*`
