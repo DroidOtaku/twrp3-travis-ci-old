@@ -19,7 +19,7 @@ before_install:
 script:
 - breakfast falconss
 - make recoveryimage
-- recoveryimgfile=`find . -name *.img | grep recovery*`
+- recoveryimgfile=`find . -name recovery.img | grep -v obj | head -1`
 deploy:
   provider: releases
   api_key:
