@@ -8,6 +8,6 @@
 	<project path="device/sony/falconss" name="android_device_sony_falconss" revision="twrp-6.0" remote="tvb" />
 	<project path="kernel/sony/falconss" name="android_kernel_sony_falconss" revision="cm-11.0" remote="tvss" />
 	<project path="vendor/sony/falconss" name="android_vendor_sony_falconss" revision="cm-11.0" remote="tvss" />
-	<!-- QCOM Common -->
+	<!-- CM QCOM Common -->
 	<project path="device/qcom/common" name="android_device_qcom_common" revision="cm-12.1" remote="cm" />
 </manifest>
