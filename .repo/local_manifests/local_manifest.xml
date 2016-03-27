@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 	<!-- Remote names -->
-	<remote name="tvss" fetch="https://github.com/TeamVee-SS/" />
-	<remote name="tvb" fetch="https://github.com/TeamVee-B/" />
 	<remote name="cm" fetch="https://github.com/CyanogenMod/" />
-	<!-- Project FalconSS -->
-	<project path="device/sony/falconss" name="android_device_sony_falconss" revision="twrp-6.0" remote="tvb" />
-	<project path="kernel/sony/falconss" name="android_kernel_sony_falconss" revision="cm-11.0" remote="tvss" />
-	<project path="vendor/sony/falconss" name="android_vendor_sony_falconss" revision="cm-11.0" remote="tvss" />
-	<!-- CM QCOM Common -->
-	<project path="device/qcom/common" name="android_device_qcom_common" revision="cm-12.1" remote="cm" />
+	<remote name="tv" fetch="https://github.com/TeamVee/" />
+	<remote name="omni" fetch="https://github.com/omnirom/" />
+	<!-- Unofficial Builds -->
+	<remove-project name="CyanogenMod/android_packages_apps_CMUpdater" />
+	<!-- Use Custom HAL -->
+	<project path="hardware/qcom/display-caf/msm7x27a" name="android_hardware_qcom_display" revision="cm-13.0" remote="tv" />
+	<project path="hardware/qcom/media-caf/msm7x27a" name="android_hardware_qcom_media" revision="cm-13.0" remote="tv" />
+	<!-- TWRP -->
+	<project path="bootable/recovery-omni" name="android_bootable_recovery" revision="android-6.0" remote="omni" />
+	<project path="external/busybox" name="android_external_busybox" revision="cm-13.0" remote="cm" />
+	<!-- Vee Projects -->
+	<project path="device/lge/vee-common" name="android_device_lge_vee-common" revision="cm-13.0" remote="tv" />
+	<project path="device/lge/v1" name="android_device_lge_v1" revision="cm-13.0" remote="tv" />
+	<project path="device/lge/vee3" name="android_device_lge_vee3" revision="cm-13.0" remote="tv" />
+	<!-- Common Projects -->
+	<project path="kernel/lge/msm7x27a-common" name="lge-kernel-lproj" revision="cm-13.0" remote="tv" />
+	<project path="vendor/lge" name="android_vendor_lge" revision="cm-13.0" remote="tv" />
 </manifest>
