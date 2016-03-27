@@ -1,14 +1,15 @@
 #!/bin/bash
+sudo apt-get install parallel
 loop() {
 LEND=$(date +"%s")
-LBUILDTIME=$(($LEND - $START))
+LBUILDTIME=$(($LEND - $LSTART))
 echo -ne "\r\033[K"
 echo -ne "${bldgrn}Sync Time: $(($LBUILDTIME / 60)) minutes and $(($LBUILDTIME % 60)) seconds.${txtrst}"
-if ! [ -f arch/$ARCH/boot/zImage ]; then
+if ! [ "$(($LBUILDTIME / 60))" == "10"  ]; then
 	sleep 1
 	loop
 fi
 }
-START=$(date +"%s")
-repo sync -q -j${NR_CPUS} &>/dev/null | loop
+LSTART=$(date +"%s")
+( echo repo sync -q -j${NR_CPUS}; echo loop) | parallel
 rm -rf .repo
