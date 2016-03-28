@@ -15,7 +15,11 @@ before_install:
 - git config --global user.name "Travis-CI" &> /dev/null
 - git config --global user.email "travis@travis-ci.org" &> /dev/null
 - echo "y" | repo init -u git://github.com/lj50036/platform_manifest_twrp_omni.git -b twrp-6.0
-- source sync.sh
+- mv .repo/local_manifests .repo/lm
+- repo sync -q -j${NR_CPUS}
+- mv .repo/lm .repo/local_manifests
+- repo sync -q -j${NR_CPUS}
+- rm -rf .repo
 - source build/envsetup.sh
 script:
 - twrpd="vee3"
