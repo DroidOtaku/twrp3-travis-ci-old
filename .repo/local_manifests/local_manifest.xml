@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 	<!-- Remote names -->
-	<remote name="cm" fetch="https://github.com/CyanogenMod/" />
 	<remote name="tv" fetch="https://github.com/TeamVee/" />
-	<remote name="omni" fetch="https://github.com/omnirom/" />
-	<!-- Use Custom HAL -->
-	<project path="hardware/qcom/display-caf/msm7x27a" name="android_hardware_qcom_display" revision="cm-13.0" remote="tv" />
-	<project path="hardware/qcom/media-caf/msm7x27a" name="android_hardware_qcom_media" revision="cm-13.0" remote="tv" />
 	<!-- Vee Projects -->
-	<project path="device/lge/vee-common" name="android_device_lge_vee-common" revision="cm-13.0" remote="tv" />
-	<project path="device/lge/v1" name="android_device_lge_v1" revision="cm-13.0" remote="tv" />
-	<project path="device/lge/vee3" name="android_device_lge_vee3" revision="cm-13.0" remote="tv" />
+	<project path="device/lge/vee3" name="android_device_lge_vee3" revision="cm-11.0" remote="tv" />
 	<!-- Common Projects -->
 	<project path="kernel/lge/msm7x27a-common" name="lge-kernel-lproj" revision="cm-13.0" remote="tv" />
 </manifest>
