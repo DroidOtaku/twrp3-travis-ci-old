@@ -6,13 +6,14 @@ before_install:
 - sudo dd if=/dev/zero of=/swapfile bs=1024 count=2048k
 - sudo mkswap /swapfile
 - sudo swapon /swapfile
+before_script:
 - mkdir ~/bin
 - PATH=~/bin:$PATH
 - curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 - chmod a+x ~/bin/repo
 - git config --global user.name "Travis-CI" &> /dev/null
 - git config --global user.email "travis@travis-ci.org" &> /dev/null
-- echo "y" | repo init -u git://github.com/lj50036/platform_manifest_twrp_omni.git -b twrp-6.0
+- repo init -u git://github.com/lj50036/platform_manifest_twrp_omni.git -b twrp-6.0 <<< y
 - repo sync -j1
 - rm -rf .repo
 - source build/envsetup.sh
@@ -22,8 +23,8 @@ script:
 - make recoveryimage
 deploy:
   provider: releases
-  api_key:
-    secure: WVO6azJdGkFF4Y3LFjYZdBOx/ENHkItAYAWiAIStNZQXOB7blU2dbbxZeDkAGrL6dgFW3SDNpGzBjHXyeuc5hoBb5Bu2lo90TmIa8riJzlfJROLrnyHzMz7HFjkUeqfPfNj2O/FSKNxwSvxpLA+Gw/D5OKoYAExKl51AK1TB4rd3VXaLO2VbK3P36fR/1hc3ldbZzGNZhfu+r/Elwfved+tNRoFg4tU51kz4lOsUgAe2gNEiUoLbudyfWkM+cwx+1bUW8ZkGb14usDona4BQ2o1ZiIzHfJX5rh+/oBZR/2FpCA1yr8nqR43e/CEbm8JNsiCtAuvT8rNmXJZMNK9Hgwo+s5dsoIUM86Uejpgyiw8EC6EJq9V9zmKP3HiKQmpc9gfceU61p3uk5suGx+G/ZktZ0PM5DhGrcL1blbiD8bKQthP46IzxKM7r1NrfqMbAcwXT3Y+4dJA8phZuH0fKvpOaypu/JyiUgeo96+sWGSioOD2b39TOCDy3rlzKUVZUDVJX83Q3bOkjGH/g4vaUAzq6NtH27916BTtazZEOID1WZkUm8gmlBmR1ES1+RF8RohlVlEJqg1NO6TOh5v7Htvfo4VP8jG+ewdiffmMUJKB3M/erGHNJimv/LmF9vj3Y2r/c84bKWSjhiOhwnCmlwKXAEiQVu4zy7GUFoI0W+P0=
+#  api_key:
+#    secure: WVO6azJdGkFF4Y3LFjYZdBOx/ENHkItAYAWiAIStNZQXOB7blU2dbbxZeDkAGrL6dgFW3SDNpGzBjHXyeuc5hoBb5Bu2lo90TmIa8riJzlfJROLrnyHzMz7HFjkUeqfPfNj2O/FSKNxwSvxpLA+Gw/D5OKoYAExKl51AK1TB4rd3VXaLO2VbK3P36fR/1hc3ldbZzGNZhfu+r/Elwfved+tNRoFg4tU51kz4lOsUgAe2gNEiUoLbudyfWkM+cwx+1bUW8ZkGb14usDona4BQ2o1ZiIzHfJX5rh+/oBZR/2FpCA1yr8nqR43e/CEbm8JNsiCtAuvT8rNmXJZMNK9Hgwo+s5dsoIUM86Uejpgyiw8EC6EJq9V9zmKP3HiKQmpc9gfceU61p3uk5suGx+G/ZktZ0PM5DhGrcL1blbiD8bKQthP46IzxKM7r1NrfqMbAcwXT3Y+4dJA8phZuH0fKvpOaypu/JyiUgeo96+sWGSioOD2b39TOCDy3rlzKUVZUDVJX83Q3bOkjGH/g4vaUAzq6NtH27916BTtazZEOID1WZkUm8gmlBmR1ES1+RF8RohlVlEJqg1NO6TOh5v7Htvfo4VP8jG+ewdiffmMUJKB3M/erGHNJimv/LmF9vj3Y2r/c84bKWSjhiOhwnCmlwKXAEiQVu4zy7GUFoI0W+P0=
   file: "out/target/product/${twrpd}/recovery.img"
   on:
-    repo: TeamVee-B/twrp3-travis-ci
+    repo: TeamVee-Deprecated/twrp3-travis-ci-old
