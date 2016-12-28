@@ -14,7 +14,7 @@ before_script:
 - git config --global user.name "Travis-CI" &> /dev/null
 - git config --global user.email "travis@travis-ci.org" &> /dev/null
 - repo init -u git://github.com/lj50036/platform_manifest_twrp_omni.git -b twrp-6.0 <<< y
-- repo sync -j1 --quiet
+- travis_wait 30 repo sync -j1 --quiet
 - rm -rf .repo
 - source build/envsetup.sh
 script:
