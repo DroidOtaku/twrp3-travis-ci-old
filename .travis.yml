@@ -1,7 +1,7 @@
 sudo: required
 language: c
 before_install:
-- sudo apt-get purge oracle* openjdk-6* -y
+- sudo apt-get purge oracle* openjdk-8* -y
 - sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential lzop zip curl libncurses5-dev zlib1g-dev pngcrush schedtool libxml2 libxml2-utils xsltproc g++-multilib lib32z1-dev lib32ncurses5-dev lib32readline-gplv2-dev gcc-multilib openjdk-7-jdk -y
 - sudo dd if=/dev/zero of=/swapfile bs=1024 count=2048k
 - sudo mkswap /swapfile
@@ -11,9 +11,9 @@ before_script:
 - PATH=~/bin:$PATH
 - curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 - chmod a+x ~/bin/repo
-- git config --global user.name "Travis-CI" &> /dev/null
-- git config --global user.email "travis@travis-ci.org" &> /dev/null
-- repo init -u https://github.com/CyanogenMod/android.git -b cm-11.0 -g all,-notdefault,-darwin <<< y
+- git config --global user.name "muhajaya"
+- git config --global user.email "muhajayaanwar@gmail.com"
+- repo init -u repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-8.1
 - rm -rf .repo/local_manifests/
 - travis_wait 60 repo sync -j1 --quiet
 - curl --create-dirs -L -o .repo/local_manifests/msm7x27a_manifest.xml -O -L https://raw.github.com/TeamHackLG/local_manifest/cm-11.0/msm7x27a_manifest.xml
